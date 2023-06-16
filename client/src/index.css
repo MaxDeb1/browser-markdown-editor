@@ -1,0 +1,99 @@
+*, ::before, ::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --clr-background-main: "#151619",
+  --clr-background-sectionheader: "#1D1F22",
+  --clr-background-blockquote: "#2B2D31",
+  --clr-foreground-markdownbody: "#C1C4CB",
+  --clr-foreground-sectionheader: "#C1C4CB",
+  --clr-foreground-previewbody: "#C1C4CB",
+  --clr-foreground-htmlheaders: "#FFFFFF",
+  --clr-foreground-h6: "#E46643",
+  --clr-foreground-blockquote: "#FFFFFF",
+  --clr-foreground-code: "#FFFFFF",
+  --clr-divider: "#5A6069",
+
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+
+  color-scheme: light dark;
+  color: var(--clr-foreground-markdownbody);
+  background-color: var(--clr-background-main);
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-text-size-adjust: 100%;
+}
+
+a {
+  font-weight: 500;
+  color: #646cff;
+  text-decoration: inherit;
+}
+a:hover {
+  color: #535bf2;
+}
+
+body {
+  margin: 0;
+  display: flex;
+  place-items: center;
+  min-width: 320px;
+  min-height: 100vh;
+}
+
+h1 {
+  font-size: 3.2em;
+  line-height: 1.1;
+}
+
+button {
+  border-radius: 8px;
+  border: 1px solid transparent;
+  padding: 0.6em 1.2em;
+  font-size: 1em;
+  font-weight: 500;
+  font-family: inherit;
+  background-color: #1a1a1a;
+  cursor: pointer;
+  transition: border-color 0.25s;
+}
+button:hover {
+  border-color: #646cff;
+}
+button:focus,
+button:focus-visible {
+  outline: 4px auto -webkit-focus-ring-color;
+}
+
+@media (prefers-color-scheme: light) {
+  :root {
+    --clr-background-main: "#FFFFFF",
+    --clr-background-sectionheader: "#F5F5F5",
+    --clr-background-blockquote: "#F5F5F5",
+    --clr-foreground-markdownbody: "#35393F",
+    --clr-foreground-sectionheader: "#7C8187",
+    --clr-foreground-previewbody: "#7C8187",
+    --clr-foreground-htmlheaders: "#35393F",
+    --clr-foreground-h6: "#E46643",
+    --clr-foreground-blockquote: "#35393F",
+    --clr-foreground-code: "#35393F",
+    --clr-divider: "#E4E4E4",
+
+    color: var(--clr-foreground-markdownbody);
+    background-color: var(--clr-background-main);
+  }
+  a:hover {
+    color: #747bff;
+  }
+  button {
+    background-color: #f9f9f9;
+  }
+}

@@ -1,0 +1,28 @@
+.document {
+  display: flex;
+  align-items: center;
+  padding: 7px;
+}
+
+.document img {
+  padding: 0 1rem 0 0;
+}
+
+.document__legend,
+.document__date {
+  font-weight: 300;
+  font-size: 13px;
+  line-height: 15px;
+  color: var(--clr-foreground-markdownbody);
+}
+
+.document__name {
+  font-weight: 400;
+  font-size: 15px;
+  line-height: 18px;
+  color: white;
+}
+
+.sidebar .document:hover .document__name {
+  color: var(--clr-orange);
+}

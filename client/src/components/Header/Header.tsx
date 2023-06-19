@@ -1,7 +1,5 @@
-// import { useState } from "react";
 import close from "../../assets/icon-close.svg";
 import trash from "../../assets/icon-delete.svg";
-// import document from "../../assets/icon-document.svg";
 import menu from "../../assets/icon-menu.svg";
 import save from "../../assets/icon-save.svg";
 import logo from "../../assets/logo.svg";
@@ -12,7 +10,6 @@ import Document from "../Document/Document";
 const Header = () => {
   const isMenuOpen = useMenuStore((state) => state.isOpen)
   const toggleMenu = useMenuStore((state) => state.toggleIsOpen)
-  // const [documentName, setDocumentName] = useState("welcome.md")
 
   return (
     <header>
@@ -28,20 +25,7 @@ const Header = () => {
       </div>
       <div className="divider"></div>
       <div className="activeDocument">
-{/*         <div className="document">
-          <img src={document} alt="" />
-          <div>
-            <p className="document__legend">Document Name</p>
-            <input
-              type="text"
-              className="document__name"
-              value={documentName}
-              spellCheck="false"
-              onChange={(e) => setDocumentName(e.target.value)}
-            />
-          </div>
-        </div> */}
-        <Document />
+        <Document all={false} />
         <div className="handleDocument">
           <img src={trash} alt="delete" />
           <button className="button save">

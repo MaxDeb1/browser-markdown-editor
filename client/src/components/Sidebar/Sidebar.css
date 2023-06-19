@@ -1,0 +1,32 @@
+.sidebar {
+  width: 250px;
+  height: 100vh;
+  padding: 24px;
+  transform: translateX(-250px);
+  background-color: var(--clr-background-sectionheader);
+  overflow: hidden;
+  transition: all 300ms ease-in-out;
+}
+
+.sidebar.open {
+    transform: translateX(0px);
+}
+
+.sidebar h4 {
+  text-transform: uppercase;
+  font-size: 14px;
+  padding-block: 1.5px 25.5px;
+}
+
+.sidebar .newDoc {
+  width: 100%;
+}
+
+.sidebar .document {
+  padding: 2rem 0 0 0;
+  cursor:pointer;
+}
+
+.sidebar .document:hover .document__name {
+  color: var(--clr-orange);
+}

@@ -6,15 +6,15 @@
 
 :root {
   --clr-background-main: #151619;
-  --clr-background-sectionheader: #1D1F22;
-  --clr-background-blockquote: #2B2D31;
+  --clr-background-sectionheader: #2B2D31;
+  --clr-background-blockquote: #1D1F22;
   --clr-foreground-markdownbody: #C1C4CB;
   --clr-foreground-sectionheader: #C1C4CB;
   --clr-foreground-previewbody: #C1C4CB;
   --clr-foreground-htmlheaders: #FFFFFF;
-  --clr-foreground-h6: #E46643;
   --clr-foreground-blockquote: #FFFFFF;
   --clr-foreground-code: #FFFFFF;
+  --clr-orange: #E46643;
   --clr-divider: #5A6069;
 
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
@@ -32,9 +32,46 @@
   -webkit-text-size-adjust: 100%;
 }
 
+body {
+  display: flex;
+  width: calc(100vw + 250px);
+  overflow: hidden;
+}
+
+#root {
+  display: flex;
+}
+
+input {
+  background-color: inherit;
+  border: none;
+  outline: none;
+}
+
 button {
   border: none;
 }
+
+.button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 11.5px;
+  background-color: var(--clr-orange);
+  border-radius: 5px;
+  cursor: pointer;
+  transition: filter 200ms ease-in-out
+}
+
+.button:hover {
+  filter: brightness(1.15);
+}
+
+.divider {
+  width: 1px;
+  background-color: var(--clr-divider);
+}
+
 
 @media (prefers-color-scheme: light) {
   :root {

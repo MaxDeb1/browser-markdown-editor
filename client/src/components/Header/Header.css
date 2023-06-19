@@ -11,42 +11,33 @@ header {
   width: 72px;
   aspect-ratio: 1;
   text-align: center;
-  background-color: var(--clr-background-blockquote);
+  background-color: #35393f;
   cursor: pointer;
-  transition: filter 200ms ease-in-out;
+  transition: all 200ms ease-in-out;
 }
 
 .menu-toggle:hover {
-  filter: brightness(1.5);
+  background-color: var(--clr-orange);
 }
 
 .logo {
   display: none;
 }
 
-.divider {
-  width: 1px;
+header .divider {
   height: 40px;
-  background-color: var(--clr-divider);
 }
 
-.document {
+.activeDocument {
+  width: 100%;
+  padding-inline: 24px 16px;
   display: flex;
   align-items: center;
-  padding: 7px;
-}
-
-.document img {
-  padding: 17px;
-}
-
-.document__legend {
-  color: var(--clr-foreground-markdownbody);
+  justify-content: space-between;
 }
 
 .handleDocument {
   margin-left: auto;
-  padding-right: 16px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -59,19 +50,7 @@ header {
 }
 
 .save {
-  padding: 11.5px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background-color: #e56645;
-  border-radius: 5px;
-  cursor: pointer;
-  transition: filter 200ms ease-in-out;
   font-size: 0;
-}
-
-.save:hover {
-  filter: brightness(1.15);
 }
 
 .save img {

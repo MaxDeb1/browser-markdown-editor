@@ -3,13 +3,13 @@ import trash from "../../assets/icon-delete.svg";
 import menu from "../../assets/icon-menu.svg";
 import save from "../../assets/icon-save.svg";
 import logo from "../../assets/logo.svg";
-import useMenuStore from "../../lib/store";
+import { useAppStore } from "../../lib/store";
+import OpenDocument from "../Document/OpenDocument";
 import "./Header.css";
-import Document from "../Document/Document";
 
 const Header = () => {
-  const isMenuOpen = useMenuStore((state) => state.isOpen)
-  const toggleMenu = useMenuStore((state) => state.toggleIsOpen)
+  const isMenuOpen = useAppStore((state) => state.isOpen);
+  const toggleMenu = useAppStore((state) => state.toggleIsOpen);
 
   return (
     <header>
@@ -25,7 +25,7 @@ const Header = () => {
       </div>
       <div className="divider"></div>
       <div className="activeDocument">
-        <Document all={false} />
+        <OpenDocument />
         <div className="handleDocument">
           <img src={trash} alt="delete" />
           <button className="button save">

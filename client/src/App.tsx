@@ -4,10 +4,10 @@ import Header from "./components/Header/Header";
 import Markdown from "./components/Markdown/Markdown";
 import Preview from "./components/Preview/Preview";
 import Sidebar from "./components/Sidebar/Sidebar";
-import useMenuStore from "./lib/store";
+import { useAppStore } from "./lib/store";
 
 function App() {
-  const isMenuOpen = useMenuStore((state) => state.isOpen)
+  const isMenuOpen = useAppStore((state) => state.isOpen)
 
   return (
     <>

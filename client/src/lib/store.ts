@@ -1,13 +1,10 @@
 import { create } from 'zustand'
+import { MenuSlice, createMenuSlice } from './slices/openMenuSlice'
+import { DocumentSlice, createDocumentSlice } from './slices/activeDocumentSlice'
 
-interface MenuState {
-  isOpen: boolean;
-  toggleIsOpen: () => void
-}
+type StoreState = MenuSlice & DocumentSlice
 
-const useMenuStore = create<MenuState>((set) => ({
-  isOpen: false,
-  toggleIsOpen: () => set((state) => ({ isOpen: !state.isOpen})),
+export const useAppStore = create<StoreState>()((...args) => ({
+  ...createMenuSlice(...args),
+  ...createDocumentSlice(...args),
 }))
-
-export default useMenuStore

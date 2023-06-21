@@ -1,22 +1,37 @@
-import document from "../../assets/icon-document.svg";
-import datas from "../../../data.json";
+import iconDocument from "../../assets/icon-document.svg";
 import { useAppStore } from "../../lib/store";
+import axios from "axios";
+import { useEffect, useState } from "react";
+
+interface Documents {
+  id: number,
+  name: string,
+  createdAt: string
+}
 
 const AllDocuments = () => {
   const { updateActiveDoc } = useAppStore()
+  const [ documents, setDocuments ] = useState<Documents[]>([]);
+
+  useEffect(() => {
+    axios
+      .get("../../../data.json")
+      .then((res) => setDocuments(res.data))
+      .catch((err) => console.log(err));
+  }, []);
 
   return (
     <div>
-      {datas.map((data) => (
+      {documents.map((document) => (
         <div
-          key={data.id}
+          key={document.id}
           className="document"
-          onClick={() => updateActiveDoc(data.name)}
+          onClick={() => updateActiveDoc(document.id)}
         >
-          <img src={document} alt="" />
+          <img src={iconDocument} alt="" />
           <div>
-            <p className="document__date">{data.createdAt}</p>
-            <p className="document__name">{data.name}</p>
+            <p className="document__date">{document.createdAt}</p>
+            <p className="document__name">{document.name}</p>
           </div>
         </div>
       ))}

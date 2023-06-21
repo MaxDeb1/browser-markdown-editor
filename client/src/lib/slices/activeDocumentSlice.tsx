@@ -1,12 +1,18 @@
 import { StateCreator } from 'zustand'
 import datas from "../../../data.json";
 
-export interface DocumentSlice {
-  activeDoc: string
-  updateActiveDoc: (data: string) => void
+export interface Document {
+  id: number
+  name: string
+  createdAt: string
 }
 
-export const createDocumentSlice: StateCreator<DocumentSlice> = (set) => ({
-  activeDoc: datas[0].name,
-  updateActiveDoc: (data) => set(() => ({activeDoc: data}))
+export interface ActiveDocumentSlice {
+  activeDoc: Document
+  updateActiveDoc: (data: number) => void
+}
+
+export const createDocumentSlice: StateCreator<ActiveDocumentSlice> = (set) => ({
+  activeDoc: datas[0],
+  updateActiveDoc: (id: Document["id"]) => set({activeDoc: datas[id - 1]})
 })

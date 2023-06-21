@@ -1,9 +1,19 @@
+import { useEffect, useState } from "react";
 import document from "../../assets/icon-document.svg";
 import { useAppStore } from "../../lib/store";
 import "./Document.css";
 
 const OpenDocument = () => {
   const { activeDoc } = useAppStore();
+  const [ documentName, setDocumentName ] = useState("")
+
+  useEffect(() => {
+    setDocumentName(activeDoc.name)
+  }, [activeDoc])
+
+  const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    setDocumentName(event.target.value);
+  }
 
   return (
     <div className="document">
@@ -13,9 +23,9 @@ const OpenDocument = () => {
         <input
           type="text"
           className="document__name"
-          value={activeDoc}
+          value={documentName}
           spellCheck="false"
-          onChange={(e) => e.target.value}
+          onChange={handleChange}
         />
       </div>
     </div>

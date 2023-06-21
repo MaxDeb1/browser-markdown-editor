@@ -11,6 +11,9 @@ const Header = () => {
   const isMenuOpen = useAppStore((state) => state.isOpen);
   const toggleMenu = useAppStore((state) => state.toggleIsOpen);
 
+  const handleDelete = () => {}
+  const handleSave = () => {}
+
   return (
     <header>
       <button className="menu-toggle" onClick={toggleMenu}>
@@ -27,8 +30,10 @@ const Header = () => {
       <div className="activeDocument">
         <OpenDocument />
         <div className="handleDocument">
-          <img src={trash} alt="delete" />
-          <button className="button save">
+          <div className="delete" onClick={handleDelete}>
+            <img src={trash} alt="delete" />
+          </div>
+          <button className="button save" onClick={handleSave}>
             <img src={save} alt="" />
             Save Changes
           </button>

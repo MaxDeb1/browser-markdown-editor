@@ -56,7 +56,7 @@ button {
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 11.5px;
+  padding: 11.5px 17px;
   background-color: var(--clr-orange);
   border-radius: 5px;
   cursor: pointer;

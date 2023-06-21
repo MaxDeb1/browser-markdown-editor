@@ -1,13 +1,22 @@
-import "./Markdown.css"
+import { useAppStore } from "../../lib/store";
+import "./Markdown.css";
 
-const Markdown = () => {
-    return (
-        <div className="markdown">
-            <div className="title">
-                Markdown
-            </div>
-        </div>
-    );
+const MarkdownScreen = () => {
+  const { activeDoc } = useAppStore();
+
+  return (
+    <div className="markdown">
+      <label htmlFor="markdown" className="title">
+        Markdown
+      </label>
+      <textarea
+        id="mardown"
+        className="content"
+        name="content"
+        value={activeDoc.content}
+      />
+    </div>
+  );
 };
 
-export default Markdown;
+export default MarkdownScreen;

@@ -1,3 +1,6 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@300;400;700&display=swap');
+
 *, ::before, ::after {
   margin: 0;
   padding: 0;
@@ -5,17 +8,19 @@
 }
 
 :root {
-  --clr-background-main: #151619;
-  --clr-background-sectionheader: #2B2D31;
-  --clr-background-blockquote: #1D1F22;
-  --clr-foreground-markdownbody: #C1C4CB;
-  --clr-foreground-sectionheader: #C1C4CB;
-  --clr-foreground-previewbody: #C1C4CB;
-  --clr-foreground-htmlheaders: #FFFFFF;
-  --clr-foreground-blockquote: #FFFFFF;
-  --clr-foreground-code: #FFFFFF;
-  --clr-orange: #E46643;
-  --clr-divider: #5A6069;
+  --clr-background-main: hsl(225, 9%, 9%);
+  --clr-background-sectionheader: hsl(220, 7%, 18%);
+  --clr-background-menutoggle: hsl(216, 9%, 23%);
+  --clr-background-windowtitle: hsl(216, 8%, 12%);
+  --clr-background-blockquote: hsl(220, 7%, 18%);
+  --clr-foreground-markdownbody: hsl(222, 9%, 78%);
+  --clr-foreground-sectionheader: hsl(222, 9%, 78%);
+  --clr-foreground-previewbody: hsl(222, 9%, 78%);
+  --clr-foreground-htmlheaders: hsl(0, 0%, 100%);
+  --clr-foreground-blockquote: hsl(0, 0%, 100%);
+  --clr-foreground-code: hsl(0, 0%, 100%);
+  --clr-orange: hsl(13, 75%, 58%);
+  --clr-divider: hsl(216, 8%, 38%);
 
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
@@ -40,6 +45,7 @@ body {
 
 #root {
   display: flex;
+  font-family: 'Roboto', sans-serif;
 }
 
 input {
@@ -75,16 +81,16 @@ button {
 
 @media (prefers-color-scheme: light) {
   :root {
-    --clr-background-main: #FFFFFF;
+    --clr-background-main: hsl(0, 0%, 100%);
     --clr-background-sectionheader: #F5F5F5;
     --clr-background-blockquote: #F5F5F5;
     --clr-foreground-markdownbody: #35393F;
     --clr-foreground-sectionheader: #7C8187;
     --clr-foreground-previewbody: #7C8187;
     --clr-foreground-htmlheaders: #35393F;
-    --clr-foreground-h6: #E46643;
     --clr-foreground-blockquote: #35393F;
     --clr-foreground-code: #35393F;
+    --clr-orange: hsl(13, 75%, 58%);
     --clr-divider: #E4E4E4;
 
     color: var(--clr-foreground-markdownbody);

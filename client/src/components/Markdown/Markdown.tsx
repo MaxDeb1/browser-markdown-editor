@@ -1,8 +1,18 @@
+import { useEffect } from "react";
 import { useAppStore } from "../../lib/store";
 import "./Markdown.css";
 
 const MarkdownScreen = () => {
   const { activeDoc } = useAppStore();
+  const { markdownContent, updateMarkdownContent } = useAppStore()
+
+  useEffect(() => {
+    updateMarkdownContent(activeDoc.content)
+  }, [activeDoc, updateMarkdownContent])
+
+  const handleChange = (event: React.ChangeEvent<HTMLTextAreaElement>) => {
+    updateMarkdownContent(event.target.value);
+  }
 
   return (
     <div className="markdown">
@@ -13,7 +23,9 @@ const MarkdownScreen = () => {
         id="mardown"
         className="content"
         name="content"
-        value={activeDoc.content}
+        spellCheck="false"
+        value={markdownContent}
+        onChange={handleChange}
       />
     </div>
   );

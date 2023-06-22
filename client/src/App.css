@@ -36,7 +36,7 @@ main > * .title {
   align-items: center;
   justify-content: space-between;
   color: var(--clr-foreground-markdownbody);
-  background-color: var(--clr-background-blockquote);
-  box-shadow: 0 0 0 var(--p-right) var(--clr-background-blockquote);
-	clip-path: inset(0 calc(-1 * var(--p-right)) 0 calc(-1 * var(--p-left)));
+  background-color: var(--clr-background-windowtitle);
+  box-shadow: 0 0 0 var(--p-right) var(--clr-background-windowtitle);
+	clip-path: inset(0 calc(-1 * var(--p-right)) 0 calc(-0.9 * var(--p-left)));
 }

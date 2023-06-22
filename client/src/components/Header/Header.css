@@ -11,7 +11,7 @@ header {
   min-width: 72px;
   aspect-ratio: 1;
   text-align: center;
-  background-color: #35393f;
+  background-color: var(--clr-background-menutoggle);
   cursor: pointer;
   transition: all 200ms ease-in-out;
 }
@@ -30,7 +30,7 @@ header .divider {
 
 .activeDocument {
   width: 100%;
-  padding-inline: 24px 16px;
+  padding-inline: 17px 16px;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -70,7 +70,7 @@ header .divider {
   .logo {
     display: block;
     /* width: 184px; */
-    padding-inline: 24px;
+    padding-inline: 24px 30px;
     text-align: center;
   }
 }

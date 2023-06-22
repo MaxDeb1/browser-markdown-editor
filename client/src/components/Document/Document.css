@@ -17,10 +17,10 @@
 }
 
 .document__name {
-  font-weight: 400;
   font-size: 15px;
   line-height: 18px;
   color: white;
+  caret-color: var(--clr-orange);
 }
 
 .sidebar .document:hover .document__name {

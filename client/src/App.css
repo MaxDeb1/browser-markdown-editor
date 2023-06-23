@@ -16,29 +16,29 @@ main {
 main > * {
   width: 50%;
   height: 100vh;
+  transition: all 500ms ease-in-out;
 }
-/* .container main > :first-child {
- width: 0px;
+
+.container main.fullscreenPreview .markdown {
+ width: 0;
  padding: 0;
  overflow: hidden;
 }
-.container main > :last-child {
-  width: 100%;
-}
-.markdown .content {
-  width: 50vw;
-  overflow: hidden;
-  padding-inline: 24px;
-} */
 
-main > *:not(.divider) {
-  --p-left: 16px;
-  --p-right: 24px;
-  padding-inline: var(--p-left) var(--p-right);
+.container main .markdown .content {
+  width: 50vw;
+}
+.container.menuOpen main .markdown .content {
+  width: calc(50vw - (117.5px + var(--p-right)));
+}
+
+.container main.fullscreenPreview .preview {
+  width: 100%;
 }
 
 main > * .title {
   height: 42px;
+  padding-inline: var(--p-left) var(--p-right);
   font-style: normal;
   font-weight: 500;
   text-transform: uppercase;
@@ -50,6 +50,4 @@ main > * .title {
   justify-content: space-between;
   color: var(--clr-foreground-markdownbody);
   background-color: var(--clr-background-windowtitle);
-  box-shadow: 0 0 0 var(--p-right) var(--clr-background-windowtitle);
-	clip-path: inset(0 calc(-1 * var(--p-right)) 0 calc(-0.9 * var(--p-left)));
 }

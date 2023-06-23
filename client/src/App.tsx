@@ -7,13 +7,14 @@ import { useAppStore } from "./lib/store";
 
 function App() {
   const isMenuOpen = useAppStore((state) => state.isOpen)
+  const isPreviewFullscreen = useAppStore((state) => state.isFullscreen)
 
   return (
     <>
       <Sidebar />
       <section className={`container ${isMenuOpen ? "menuOpen" : ""}`}>
         <Header />
-        <main>
+        <main className={`${isPreviewFullscreen ? "fullscreenPreview" : ""}`}>
           <Markdown />
           <div className="divider"></div>
           <Preview />

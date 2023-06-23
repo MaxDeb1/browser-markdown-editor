@@ -1,19 +1,24 @@
-.fullscreen {
+.preview {
+  z-index: 2;
+}
+
+.fullscreenToggle {
   width: 18px;
   height: 18px;
   transform: translateX(10px);
   cursor: pointer;
 }
 
-.fullscreen:hover {
+.fullscreenToggle:hover {
   color: var(--clr-orange);
 }
 
 .preview .content {
-  width: calc(100% + var(--p-right));
   height: calc(100% - 120px);
+  padding-inline: var(--p-left) var(--p-right);
   font-family: 'Roboto Slab', serif;
   overflow: auto;
+  background-color: var(--clr-background-main);;
 }
 
 .preview :where(h1, h2, h3, h4, h5, h6) {

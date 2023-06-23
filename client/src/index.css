@@ -23,6 +23,9 @@
   --clr-orange: hsl(13, 75%, 58%);
   --clr-divider: hsl(216, 8%, 38%);
 
+  --p-left: 16px;
+  --p-right: 24px;
+
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
   font-weight: 400;

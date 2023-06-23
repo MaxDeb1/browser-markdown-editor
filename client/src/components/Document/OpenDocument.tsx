@@ -1,18 +1,17 @@
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import document from "../../assets/icon-document.svg";
 import { useAppStore } from "../../lib/store";
 import "./Document.css";
 
 const OpenDocument = () => {
-  const { activeDoc } = useAppStore();
-  const [ documentName, setDocumentName ] = useState("")
+  const { activeDoc, documentName, updateDocumentName } = useAppStore();
 
   useEffect(() => {
-    setDocumentName(activeDoc.name)
+    updateDocumentName(activeDoc.name)
   }, [activeDoc])
 
   const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-    setDocumentName(event.target.value);
+    updateDocumentName(event.target.value);
   }
 
   return (

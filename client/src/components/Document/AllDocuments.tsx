@@ -1,24 +1,9 @@
 import iconDocument from "../../assets/icon-document.svg";
 import { useAppStore } from "../../lib/store";
-import axios from "axios";
-import { useEffect, useState } from "react";
+import { Document } from "../Sidebar/Sidebar";
 
-interface Documents {
-  id: number,
-  name: string,
-  createdAt: string
-}
-
-const AllDocuments = () => {
+const AllDocuments = ({documents}: {documents : Document[]}) => {
   const { updateActiveDoc } = useAppStore()
-  const [ documents, setDocuments ] = useState<Documents[]>([]);
-
-  useEffect(() => {
-    axios
-      .get("../../../data.json")
-      .then((res) => setDocuments(res.data))
-      .catch((err) => console.log(err));
-  }, []);
 
   return (
     <div>

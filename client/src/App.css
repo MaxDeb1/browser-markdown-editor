@@ -17,6 +17,19 @@ main > * {
   width: 50%;
   height: 100vh;
 }
+/* .container main > :first-child {
+ width: 0px;
+ padding: 0;
+ overflow: hidden;
+}
+.container main > :last-child {
+  width: 100%;
+}
+.markdown .content {
+  width: 50vw;
+  overflow: hidden;
+  padding-inline: 24px;
+} */
 
 main > *:not(.divider) {
   --p-left: 16px;

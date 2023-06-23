@@ -1,3 +1,4 @@
+import axios from "axios";
 import close from "../../assets/icon-close.svg";
 import trash from "../../assets/icon-delete.svg";
 import menu from "../../assets/icon-menu.svg";
@@ -10,9 +11,28 @@ import "./Header.css";
 const Header = () => {
   const isMenuOpen = useAppStore((state) => state.isOpen);
   const toggleMenu = useAppStore((state) => state.toggleIsOpen);
+  const { activeDoc, documentName, markdownContent } = useAppStore();
 
-  const handleDelete = () => {}
-  const handleSave = () => {}
+  const handleDelete = () => {
+    axios
+      .delete(`http://localhost:3000/documents/${activeDoc.id}`)
+      .then((response) => {
+        console.log(response);
+        console.log(response.data);
+      });
+  };
+  const handleSave = () => {
+    axios
+      .put(`http://localhost:3000/documents/${activeDoc.id}`, {
+        ...activeDoc,
+        name: documentName,
+        content: markdownContent,
+      })
+      .then((response) => {
+        console.log(response);
+        console.log(response.data);
+      });
+  };
 
   return (
     <header>

@@ -7,12 +7,12 @@ const OpenDocument = () => {
   const { activeDoc, documentName, updateDocumentName } = useAppStore();
 
   useEffect(() => {
-    updateDocumentName(activeDoc.name)
-  }, [activeDoc])
+    updateDocumentName(activeDoc.name);
+  }, [activeDoc]);
 
   const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     updateDocumentName(event.target.value);
-  }
+  };
 
   return (
     <div className="document">

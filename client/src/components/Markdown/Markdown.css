@@ -6,7 +6,7 @@
   border: medium none;
   font-size: 14px;
   line-height: 24px;
-  color: rgb(193, 196, 203);
+  color: var(--clr-text-editor);
   background-color: inherit;
   overflow-x: hidden;
 }

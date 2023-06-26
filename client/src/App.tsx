@@ -6,8 +6,8 @@ import Sidebar from "./components/Sidebar/Sidebar";
 import { useAppStore } from "./lib/store";
 
 function App() {
-  const isMenuOpen = useAppStore((state) => state.isOpen)
-  const isPreviewFullscreen = useAppStore((state) => state.isFullscreen)
+  const isMenuOpen = useAppStore((state) => state.isOpen);
+  const isPreviewFullscreen = useAppStore((state) => state.isFullscreen);
 
   return (
     <>

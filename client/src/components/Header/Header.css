@@ -3,15 +3,15 @@ header {
   height: 72px;
   display: flex;
   align-items: center;
-  background-color: var(--clr-background-sectionheader);
-  color: var(--clr-foreground-htmlheaders);
+  background-color: var(--clr-background-primary);
+  color: var(--clr-text-primary);
 }
 
 .menu-toggle {
   min-width: 72px;
   aspect-ratio: 1;
   text-align: center;
-  background-color: var(--clr-background-menutoggle);
+  background-color: var(--clr-background-toggle);
   cursor: pointer;
   transition: all 200ms ease-in-out;
 }

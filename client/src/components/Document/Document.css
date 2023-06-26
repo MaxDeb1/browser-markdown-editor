@@ -13,13 +13,12 @@
   font-weight: 300;
   font-size: 13px;
   line-height: 15px;
-  color: var(--clr-foreground-markdownbody);
 }
 
 .document__name {
   font-size: 15px;
   line-height: 18px;
-  color: white;
+  color: var(--clr-text-secondary);
   caret-color: var(--clr-orange);
 }
 

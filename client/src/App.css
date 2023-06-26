@@ -29,7 +29,7 @@ main > * {
   width: 50vw;
 }
 .container.menuOpen main .markdown .content {
-  width: calc(50vw - (117.5px + var(--p-right)));
+  width: calc(50vw - (100px + var(--p-right)));
 }
 
 .container main.fullscreenPreview .preview {
@@ -48,6 +48,6 @@ main > * .title {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  color: var(--clr-foreground-markdownbody);
-  background-color: var(--clr-background-windowtitle);
+  color: var(--clr-text-panelHeader);
+  background-color: var(--clr-background-panelHeader);
 }

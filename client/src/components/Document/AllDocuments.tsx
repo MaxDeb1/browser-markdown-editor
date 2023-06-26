@@ -2,8 +2,8 @@ import iconDocument from "../../assets/icon-document.svg";
 import { useAppStore } from "../../lib/store";
 import { Document } from "../Sidebar/Sidebar";
 
-const AllDocuments = ({documents}: {documents : Document[]}) => {
-  const { updateActiveDoc } = useAppStore()
+const AllDocuments = ({ documents }: { documents: Document[] }) => {
+  const { updateActiveDoc } = useAppStore();
 
   return (
     <div>

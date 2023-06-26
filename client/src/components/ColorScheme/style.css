@@ -1,0 +1,58 @@
+.toggle-container {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 24px;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+}
+
+.dark .moon {
+  filter: brightness(0%) invert(100%);
+}
+
+.sun {
+  filter: brightness(0%) invert(100%);
+}
+
+.dark .sun {
+  filter: none;
+}
+
+.react-toggle-track {
+  background-color: var(--clr-background-main);
+}
+
+.react-toggle--checked .react-toggle-track {
+  background-color: var(--clr-background-toggle);
+}
+
+.react-toggle--checked:hover:not(.react-toggle--disabled) .react-toggle-track {
+  background-color: var(--clr-background-toggle);
+  filter: brightness(1.2);
+}
+
+.react-toggle-thumb {
+  right: 1px;
+  left: 27px;
+  border: none;
+}
+
+.react-toggle--checked .react-toggle-thumb {
+  right: 27px;
+  left: 1px;
+}
+
+.react-toggle--focus .react-toggle-thumb {
+  -webkit-box-shadow: 0px 0px 3px 2px lightgray;
+  -moz-box-shadow: 0px 0px 3px 2px lightgray;
+  box-shadow: 0px 0px 2px 3px lightgray;
+}
+
+.react-toggle:active:not(.react-toggle--disabled) .react-toggle-thumb {
+  -webkit-box-shadow: 0px 0px 5px 5px lightgray;
+  -moz-box-shadow: 0px 0px 5px 5px lightgray;
+  box-shadow: 0px 0px 5px 5px lightgray;
+}

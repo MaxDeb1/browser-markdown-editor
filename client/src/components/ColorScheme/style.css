@@ -22,7 +22,7 @@
 }
 
 .react-toggle-track {
-  background-color: var(--clr-background-main);
+  background-color: var(--clr-background-toggle);
 }
 
 .react-toggle--checked .react-toggle-track {

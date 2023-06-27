@@ -5,7 +5,7 @@ import moon from '../../assets/icon-dark-mode.svg';
 import sun from '../../assets/icon-light-mode.svg';
 import './style.css'
 
-const ColorSchemeToggle: React.FC = () => {
+const ColorSchemeToggle = () => {
   const { isDark, setIsDark } = useColorScheme();
 
   return (

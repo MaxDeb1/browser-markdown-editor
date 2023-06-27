@@ -1,8 +1,5 @@
 import { useEffect, useMemo, useState } from 'react';
 import { useMediaQuery } from 'react-responsive';
-// import createPersistedState from 'use-persisted-state';
-
-// const useColorSchemeState = createPersistedState('colorScheme');
 
 export function useColorScheme(): {
   isDark: boolean;
@@ -13,10 +10,12 @@ export function useColorScheme(): {
       query: '(prefers-color-scheme: dark)',
     },
     undefined,
+    prefersDark => {
+      setIsDark(prefersDark);
+    }
   );
 
-  const [isDark, setIsDark] = useState<boolean>();
-//   const [isDark, setIsDark] = useColorSchemeState<boolean>();
+  const [isDark, setIsDark] = useState<boolean>(systemPrefersDark);
 
   const value = useMemo(() => isDark === undefined ? !!systemPrefersDark : isDark,
     [isDark, systemPrefersDark])

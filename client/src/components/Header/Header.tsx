@@ -15,7 +15,7 @@ const Header = () => {
 
   const handleDelete = () => {
     axios
-      .delete(`http://localhost:3000/documents/${activeDoc.id}`)
+      .delete(`/api/documents/${activeDoc.id}`)
       .then((response) => {
         console.log(response);
         console.log(response.data);
@@ -23,7 +23,7 @@ const Header = () => {
   };
   const handleSave = () => {
     axios
-      .put(`http://localhost:3000/documents/${activeDoc.id}`, {
+      .put(`/api/documents/${activeDoc.id}`, {
         ...activeDoc,
         name: documentName,
         content: markdownContent,

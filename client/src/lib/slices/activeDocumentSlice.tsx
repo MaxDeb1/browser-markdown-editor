@@ -1,5 +1,5 @@
 import { StateCreator } from 'zustand'
-import { documents } from "../../../data.json";
+// impor<t { documents } from "../../../data.json";
 
 export interface Document {
   id: number
@@ -9,8 +9,10 @@ export interface Document {
 }
 
 export interface DocumentSlice {
-  activeDoc: Document
-  updateActiveDoc: (data: number) => void
+  activeDoc: Document | Record<string, never>
+  updateActiveDoc: (data: Document) => void
+  // activeDoc: Document
+  // updateActiveDoc: (data: number) => void
 
   markdownContent: Document["content"]
   updateMarkdownContent: (data: string) => void
@@ -20,8 +22,10 @@ export interface DocumentSlice {
 }
 
 export const createDocumentSlice: StateCreator<DocumentSlice> = (set) => ({
-  activeDoc: documents[0],
-  updateActiveDoc: (id: Document["id"]) => set({activeDoc: documents[id - 1]}),
+  activeDoc: {},
+  updateActiveDoc: (document) => set({activeDoc: document}),
+  // activeDoc: documents[0],
+  // updateActiveDoc: (id: Document["id"]) => set({activeDoc: documents[id - 1]}),
 
   markdownContent: "",
   updateMarkdownContent: (markdownContent) => set({markdownContent}),

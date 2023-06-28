@@ -1,6 +1,7 @@
 import iconDocument from "../../assets/icon-document.svg";
 import { useAppStore } from "../../lib/store";
 import { Document } from "../Sidebar/Sidebar";
+import { format } from "date-fns";
 
 const AllDocuments = ({ documents }: { documents: Document[] }) => {
   const { updateActiveDoc } = useAppStore();
@@ -11,11 +12,11 @@ const AllDocuments = ({ documents }: { documents: Document[] }) => {
         <div
           key={document.id}
           className="document"
-          onClick={() => updateActiveDoc(document.id)}
+          onClick={() => updateActiveDoc(document)}
         >
           <img src={iconDocument} alt="" />
           <div>
-            <p className="document__date">{document.createdAt}</p>
+            <p className="document__date">{format(new Date(document.createdAt), "d LLLL yyyy")}</p>
             <p className="document__name">{document.name}</p>
           </div>
         </div>

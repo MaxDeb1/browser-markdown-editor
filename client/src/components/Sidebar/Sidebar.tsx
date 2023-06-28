@@ -15,22 +15,23 @@ export interface Document {
 
 const Sidebar = () => {
   const isMenuOpen = useAppStore((state) => state.isOpen);
+  const { updateActiveDoc } = useAppStore();
 
   const [documents, setDocuments] = useState<Document[]>([]);
 
   useEffect(() => {
     axios
-      .get("http://localhost:3000/documents")
-      .then((res) => setDocuments(res.data))
+      .get("/api/documents")
+      .then((res) => (setDocuments(res.data), updateActiveDoc(res.data[0])))
       .catch((err) => console.log(err));
   }, []);
 
   const handleAddDocument = () => {
     axios
-      .post(`http://localhost:3000/documents`, {
-        id: documents.length + 1,
+      .post(`/api/documents`, {
+        // id: documents.length + 1,
         name: "untitled-document.md",
-        createdAt: format(new Date(), "d LLLL yyyy"),
+        createdAt: format(new Date(), "yyyy-MM-dd"),
         content: "# Create your new markdown here!",
       })
       .then((res) => {

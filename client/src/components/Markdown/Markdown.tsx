@@ -2,11 +2,14 @@ import { useEffect } from "react";
 import { useAppStore } from "../../lib/store";
 import "./Markdown.css";
 
-const MarkdownScreen = () => {
+const MarkdownPanel = () => {
   const { activeDoc } = useAppStore();
   const { markdownContent, updateMarkdownContent } = useAppStore();
 
   useEffect(() => {
+/*     if(Object.keys(activeDoc).length === 0) {
+      return console.log("empty");
+    } */
     updateMarkdownContent(activeDoc.content);
   }, [activeDoc, updateMarkdownContent]);
 
@@ -19,16 +22,19 @@ const MarkdownScreen = () => {
       <label htmlFor="markdown" className="title">
         Markdown
       </label>
-      <textarea
-        id="mardown"
-        className="content"
-        name="content"
-        spellCheck="false"
-        value={markdownContent}
-        onChange={handleChange}
-      />
+      {Object.keys(activeDoc).length === 0 ?
+        <p>Loading...</p> :
+        <textarea
+          id="mardown"
+          className="content"
+          name="content"
+          spellCheck="false"
+          value={markdownContent}
+          onChange={handleChange}
+        />
+      }
     </div>
   );
 };
 
-export default MarkdownScreen;
+export default MarkdownPanel;

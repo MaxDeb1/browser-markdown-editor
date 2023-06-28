@@ -22,7 +22,7 @@ const OpenDocument = () => {
         <input
           type="text"
           className="document__name"
-          value={documentName}
+          value={documentName || ''}
           spellCheck="false"
           onChange={handleChange}
         />

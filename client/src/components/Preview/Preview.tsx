@@ -28,7 +28,9 @@ const Preview = () => {
         </div>
       </div>
       <div className="content">
-        <Markdown>{markdownContent}</Markdown>
+        {markdownContent !== undefined &&
+          <Markdown>{markdownContent}</Markdown>
+        }
       </div>
     </div>
   );

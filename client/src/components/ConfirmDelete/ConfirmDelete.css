@@ -1,0 +1,40 @@
+.modal {
+  width: 100vw;
+  height: 100vh;
+  display: grid;
+  place-content: center;
+  position: absolute;
+  top: 0;
+  left: 0;
+  text-align: center;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 3;
+}
+
+.modal.hidden {
+  display: none;
+}
+
+.modal__box {
+  width: 343px;
+  background: var(--clr-background-main);
+  border-radius: 5px;
+  padding: 1.5rem;
+}
+
+.modal__title {
+  color: var(--clr-text-highlight);
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.modal__text {
+  margin-block: 1rem;
+  font-size: 0.925rem;
+  color: var(--clr-text-main);
+}
+
+.modal__box .button {
+  width: 100%;
+  font-size: 0.925rem;
+}

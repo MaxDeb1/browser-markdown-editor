@@ -1,6 +1,6 @@
 import axios from "axios";
 import { format } from "date-fns";
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import { useAppStore } from "../../lib/store";
 import ColorSchemeToggle from "../ColorScheme/ColorSchemeToggle";
 import AllDocuments from "../Document/AllDocuments";
@@ -15,21 +15,24 @@ export interface Document {
 
 const Sidebar = () => {
   const isMenuOpen = useAppStore((state) => state.isOpen);
-  const { updateActiveDoc } = useAppStore();
+  const { updateActiveDoc, documents, updateDocuments } = useAppStore();
 
-  const [documents, setDocuments] = useState<Document[]>([]);
-
-  useEffect(() => {
+  async function fetchData() {
     axios
       .get("/api/documents")
-      .then((res) => (setDocuments(res.data), updateActiveDoc(res.data[0])))
-      .catch((err) => console.log(err));
+      .then((res) => (
+        updateDocuments(res.data),
+        updateActiveDoc(res.data[0])
+      ));
+  }
+
+  useEffect(() => {
+    fetchData()
   }, []);
 
   const handleAddDocument = () => {
     axios
       .post(`/api/documents`, {
-        // id: documents.length + 1,
         name: "untitled-document.md",
         createdAt: format(new Date(), "yyyy-MM-dd"),
         content: "# Create your new markdown here!",
@@ -38,6 +41,7 @@ const Sidebar = () => {
         console.log(res);
         console.log(res.data);
       });
+    fetchData()
   };
 
   return (

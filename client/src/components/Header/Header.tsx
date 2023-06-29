@@ -1,4 +1,5 @@
 import axios from "axios";
+import toast from "react-hot-toast";
 import close from "../../assets/icon-close.svg";
 import trash from "../../assets/icon-delete.svg";
 import menu from "../../assets/icon-menu.svg";
@@ -11,16 +12,17 @@ import "./Header.css";
 const Header = () => {
   const isMenuOpen = useAppStore((state) => state.isOpen);
   const toggleMenu = useAppStore((state) => state.toggleIsOpen);
-  const { activeDoc, documentName, markdownContent } = useAppStore();
+  const openModal = useAppStore((state) => state.setIsModalOpen);
+  const { activeDoc, documentName, markdownContent, updateDocuments } = useAppStore();
 
-  const handleDelete = () => {
+  async function fetchData() {
     axios
-      .delete(`/api/documents/${activeDoc.id}`)
-      .then((response) => {
-        console.log(response);
-        console.log(response.data);
-      });
-  };
+      .get("/api/documents")
+      .then((res) => (
+        updateDocuments(res.data)
+      ));
+  }
+
   const handleSave = () => {
     axios
       .put(`/api/documents/${activeDoc.id}`, {
@@ -31,7 +33,9 @@ const Header = () => {
       .then((response) => {
         console.log(response);
         console.log(response.data);
+        toast.success("Document saved");
       });
+    fetchData()
   };
 
   return (
@@ -50,7 +54,7 @@ const Header = () => {
       <div className="activeDocument">
         <OpenDocument />
         <div className="handleDocument">
-          <div className="delete" onClick={handleDelete}>
+          <div className="delete" onClick={openModal}>
             <img src={trash} alt="delete" />
           </div>
           <button className="button save" onClick={handleSave}>

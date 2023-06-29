@@ -26,7 +26,7 @@
 
 .sidebar .document {
   padding: 2rem 0 0 0;
-  cursor:pointer;
+  cursor: pointer;
 }
 
 .sidebar .document:hover .document__name {
